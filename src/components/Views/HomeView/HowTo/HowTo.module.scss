@@ -1,0 +1,31 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    background-color: $green-pastelle;
+    color:$black;
+    margin-bottom: 10vh;
+    padding: 6vh 2vw 2vh 2vw;
+}
+
+.title {
+    @include font(clamp(3rem, 16vw, 17rem), 400, 1, uppercase, null, start);
+    font-family: $anton;
+}
+
+.cards {
+    @include flex(flex-start,center, row wrap, 1rem, 3rem);
+    margin-top: 3vh;
+    padding: 5rem;
+}
+
+
+
+@media only screen {
+    @media (min-width:1350px) {
+        .line {
+            @include size(320px, 2.5px);
+            background-color: rgba($black, .6);
+        }
+    }
+}

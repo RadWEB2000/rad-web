@@ -1,0 +1,30 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    @include flex(flex-start,center,column, null, 2rem);
+    min-height:100vh;
+    padding: 5vh 1.5vw;
+}
+
+.slogan,
+.title {
+    @include font(unset, 400, 1, null, null, start);
+    font-family: $anton;
+}
+
+.title {
+    font-size: clamp(4.5rem, 7vw, 14rem);
+}
+
+.slogan {
+    color:$green-lime;
+    font-size: clamp(2.5rem, 5vw, 7rem);
+}
+
+.content {
+    @include font(clamp(1.4rem, 1.8vw, 2rem), 500, 1.7, null, null, start);
+    color:color-mix(in srgb, $white 30%, $silver 70%);
+    margin-top: 2.5vh;
+    max-width: 70ch;
+}

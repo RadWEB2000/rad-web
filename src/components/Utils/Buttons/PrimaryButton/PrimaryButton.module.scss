@@ -1,0 +1,27 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    @include flex(center,flex-start, row nowrap,1.45rem);
+    background-color: $onyx;
+    border-radius: 1.2vw;
+    padding: 1.4rem 2.5rem;
+    transition:.12s linear background-color,.12s linear box-shadow,.12s linear color,.12s linear column-gap;
+    &:focus-within,
+    &:hover {
+        background-color: $green-malachite;
+    box-shadow: 0 0 3rem color-mix(in srgb, $green-malachite 70%, transparent 50%);
+        color:$black;
+        column-gap: 1.7rem;
+    }
+}
+
+.label {
+    @include font(clamp(1.67rem, 2.4vw, 2.14rem), 400, 1,null, null, start);
+}
+
+.icon {
+    @include flex(center,center);
+    @include size(2rem,2rem);
+    font-size: 1.67rem;
+}

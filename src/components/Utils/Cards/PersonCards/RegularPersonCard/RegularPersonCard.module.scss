@@ -1,0 +1,89 @@
+@import "../../../../../styles/Mixins.scss";
+@import "../../../../../styles/Variables.scss";
+
+.wrapper {
+    @include flex(flex-start,flex-start,column,null,.3rem);
+    width:clamp(10rem, 40rem, 95%);
+    &:focus-within,
+    &:hover {
+        .occupation {
+            color:$green-lime;
+        }
+        .image {
+            filter: grayscale(0%);
+            transform: scale(1.15);
+        }
+    }
+}
+
+.occupation {
+    @include font(clamp(1.3rem, 1.7vw, 1.55rem), 400, 1.1,null, null, start);
+    font-family: $mono;
+    margin-top: 1.2rem;
+    padding: 0.15rem;
+    transition: .12s ease-in-out color;
+}
+
+.box {
+    display: grid;
+    grid-template-areas: "layer";
+    position: relative;
+    width: 100%;
+}
+
+.image__wrapper {
+    @include size(100%, 100%);
+    border-radius: 2rem;
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    z-index: 0;
+}
+
+.image {
+    @include size(100%,100%);
+    filter: grayscale(100%);
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.1);
+    transition:.12s ease-in-out filter, .3s linear transform;
+}
+
+.details {
+    min-height:60rem;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+.category {
+    background-color: $green-tea;
+    border-radius: 2rem;
+    color:$black;
+    left: 2rem;
+    padding: .5rem 2rem;
+    position: absolute;
+    top: 2rem;
+}
+
+.fullname {
+    @include flex(flex-start,flex-start,column);
+    bottom: 0;
+    left: 0;
+    padding: 2rem;
+    position: absolute;
+    &,
+    & > *{ 
+        width: 100%;
+    }
+    & > *{ 
+        font-family: $anton;
+    }
+}
+
+.firstname {
+    @include font(clamp(4rem, 3vw, 5.4rem), 400, 1, null, null, start);
+}
+.lastname {
+    @include font(clamp(5rem, 4.5vw, 7.2rem), 400, 1, null, null, end);
+}

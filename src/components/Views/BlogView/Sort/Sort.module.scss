@@ -1,0 +1,47 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    @include size(auto, clamp(5rem, 35rem, 95%));
+    position: relative;
+    z-index: 99;
+}
+
+.current {
+    @include flex(center,space-between, row nowrap);
+    @include size(4rem, 100%);
+    border-bottom:1.2px solid color-mix(in srgb, $onyx 10%, $white 90%);
+    color:color-mix(in srgb, $onyx 10%, $white 90%);
+    transition:.12s ease-in-out border-bottom-color;
+
+    &:hover {
+    border-bottom-color:color-mix(in srgb, $green-lime 55%, $white 45%);
+    color:color-mix(in srgb, $green-lime 55%, $white 45%);
+
+    }
+}
+
+.current,
+.method {
+    @include font(clamp(1.33rem, 1.45vw, 1.55rem), 400, 1, null, null, start);
+    font-family: $mono;
+    padding: 0.45rem 0.6rem;
+    transition:.12s ease-in-out color;
+}
+
+.cards {
+    @include flex(flex-start,flex-start, column, null, .22rem);
+    background-color: color-mix(in srgb, $black 80%, $onyx 20%);
+    position: absolute;
+    width: 100%;
+    z-index: 993;
+}
+
+.method {
+    color:color-mix(in srgb, $onyx 40%, $white 60%);
+    &:focus-within,
+    &:hover {
+         color:color-mix(in srgb, $green-tea 90%, $white 10%);
+
+    }
+}

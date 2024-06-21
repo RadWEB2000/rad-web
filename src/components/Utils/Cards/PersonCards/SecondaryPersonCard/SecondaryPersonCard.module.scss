@@ -1,0 +1,78 @@
+@import "../../../../../styles/Animations.scss";
+@import "../../../../../styles/Mixins.scss";
+@import "../../../../../styles/Variables.scss";
+
+.wrapper {
+    @include animationView(show_x_right);
+    @include flex(center,center,column, .6rem, .6rem);
+    background-color:color-mix(in srgb, $onyx 30%, $black 50%);
+    border-radius: 2vw;
+    width:clamp(4rem, 24rem , 95%);
+    padding: 1rem;
+    &:focus-within,
+    &:hover {
+        .fullname {
+            color:$green-malachite;
+        }
+    }
+}
+
+.image__wrapper {
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.image {
+    object-fit: cover;
+    object-position: top;
+}
+
+.fullname,
+.occupation {
+    @include font(unset, unset, 1.3, null, null, start);
+}
+
+
+.fullname {
+    font-size: clamp(2rem, 2.7vw, 4.2rem);
+    font-weight: 700;
+    transition:.12s linear color;
+}
+
+.occupation {
+    color:$silver;
+    font-size: clamp(1.55rem, 1.6rem, 2.3rem);
+    font-weight: 500;
+    margin-top: 0.45rem;
+}
+
+@media only screen {
+    @media (min-width:720px)   {
+        .wrapper {
+            display: grid;
+            gap:1rem;
+            grid-template-columns: repeat(7,1fr);
+            padding: 2rem 1rem;
+            width:clamp(14rem, 50rem, 95%);
+        }
+
+        .image__wrapper {
+            grid-column: 1/3;
+        }
+
+        .box {
+            grid-column: 3/-1;
+        }
+        .fullname {
+            font-size: clamp(2.3rem, 2.5vw, 2.5rem);
+        }
+
+        .occupation {
+            font-size: clamp(1.58rem, 1.67rem, 1.73rem);
+        }
+    }
+}

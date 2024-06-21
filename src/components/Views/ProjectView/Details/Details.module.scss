@@ -1,0 +1,95 @@
+@import "../../../../styles/Animations.scss";
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    @include flex(flex-start,space-evenly, row wrap, 2.42rem, 3.42rem, true);
+    background-color: $green-lime;
+    color:black;
+    // justify-content: center;
+    padding: 8vh 1.4vw;
+}
+
+.column {
+    @include animationView(show_x_left);
+    // background-color: violet;
+    width:clamp(5rem, 29rem, 99%);
+}
+
+.title {
+    @include font(3.4rem, 800, 1.2, null, null, start);
+    margin-bottom: 2rem;
+}
+
+
+.scope,
+.technologies,
+.details {
+    padding: 0.25rem 0.74rem;
+}
+
+.scope__item {
+    font-weight: 500;
+    list-style: circle inside;
+    // list-style-position: inside;
+}
+
+.technologies {
+    @include flex(flex-start,flex-start, row wrap, .6rem, .6rem);
+}
+
+.technology {
+    @include font(clamp(1.45rem, 1.61vw, 1.67rem), 400, 1, null, null, center);
+    background-color: rgba($green-dark,.75);
+    border-radius: .6rem;
+    color:$white;
+    cursor: default;
+    font-family: $mono;
+    padding: 0.6rem 1.6rem;
+    user-select: none;
+}
+
+.details {
+    @include flex(flex-start,flex-start,column, null,2.13rem);
+}
+
+.detail {
+    @include flex(flex-start, flex-start, column, null, .45rem);
+}
+
+.detail__label{
+    @include font(1.85rem, 700, 1.2, null, null, start);
+}
+
+.detail__content {
+    @include font(1.65rem, 600, 1.2, null, null, start);
+    font-family: $mono;
+    margin-left: 2rem;
+}
+
+a.detail__content {
+    position: relative;
+    &::after {
+        @include size(2px, 0%);
+        background-color: $black;
+        bottom: -.34rem;
+        left: 0;
+        transition:.21s linear width;
+    }
+
+    &:focus-within,
+    &:hover {
+        &::after {
+            width: 100%;
+        }
+    }
+}
+
+@media only screen {
+    @media (min-width:1200px){
+        .column {
+            @include animationView(show_y);
+        }
+    
+    }
+}

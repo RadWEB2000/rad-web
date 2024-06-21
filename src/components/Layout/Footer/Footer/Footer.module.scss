@@ -1,0 +1,20 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    background-color: color-mix(in srgb, $green-dark 10%, $black 60%);
+    padding-top: 5rem;
+    box-shadow: 0 0 1rem rgba($green,.04), 0 0 1rem rgba($white, .04);
+}
+
+@media only screen {
+    @media (min-width:1000px){
+        .wrapper {
+            align-items: start;
+            display: grid;
+            grid-template-columns: repeat(7,1fr);
+            grid-template-rows: minmax(30rem, auto) auto;
+            gap:2rem;
+        }
+    }
+}

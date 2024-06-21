@@ -1,0 +1,1 @@
+export {default} from "c-project/SecondaryProjectCard/SecondaryProjectCard"

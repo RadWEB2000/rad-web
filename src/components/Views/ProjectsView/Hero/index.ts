@@ -1,0 +1,1 @@
+export {default} from "v-projects/Hero/Hero"

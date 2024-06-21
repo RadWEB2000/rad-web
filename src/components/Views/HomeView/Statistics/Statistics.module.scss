@@ -1,0 +1,63 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    @include flex(center,center, row wrap, 3rem, 3rem);
+    margin:15vh auto;
+    width:clamp(5rem, 120rem, 95%);
+}
+
+.tile {
+    height: 17rem;
+    height: 12rem;
+    user-select: none;
+}
+
+.tile__image {
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 17rem;
+    width: 12rem;
+}
+
+.tile__image__picture {
+    @include size(100%,100%);
+    display: block;
+    position: relative;
+}
+
+.tile__image__img {
+    @include size(100%, 100%);
+    object-fit: cover;
+    object-position: cover;
+}
+
+.tile__plain {
+    @include flex(center,center,column);
+    border:2px solid color-mix(in srgb, rgba($jet,.2) 70%, $silver 15%);
+    border-radius: 15rem;
+    width:clamp(6rem, 42rem, 95%);
+}
+
+.tile__plain__value {
+    @include font(clamp(4rem,6vw, 8rem), 400, 1, null, null, center);
+    color:$green-tea;
+}
+
+.tile__plain__label {
+    @include font(clamp(1.55rem,2vw, 2.25rem), 400, 1, null, null, center);
+    color:$silver;
+}
+
+@media only screen {
+    @media (min-width:1230px){
+        .tile {
+            height: 17rem;
+        }
+    
+        .tile__image {
+            width: 17rem;
+        }
+    }
+}

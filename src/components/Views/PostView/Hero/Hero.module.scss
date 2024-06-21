@@ -1,0 +1,81 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+
+.wrapper {
+    // background: #444;
+    margin:8.5vh auto 5rem;
+    width:clamp(5rem, 130rem, 90%);
+}
+
+.breadcrumbs {
+    @include flex(center,flex-start, row wrap, .5rem, .5rem);
+    color:$silver;
+    margin-bottom: 2.5rem;
+}
+.breadcrumb__separator {
+    @include flex(center,center);
+    @include size(2rem, 2rem);
+}
+
+.breadcrumb__item {
+    @include font(clamp(1.5rem, 2.2vw,1.8rem), 500, 1, null, null, start);
+    font-family: $mono;
+    position: relative;
+    transition:.12s linear color;
+    &::after {
+        @include size(1px, 0%);
+        background-color: $white;
+        bottom: 0;
+        left: 0;
+        transition:.12s linear width;
+    }
+    &:focus-within,
+    &:hover {
+        color:$white;
+        &::after {
+            width: 100%;
+        }
+    }
+}
+
+.title {
+    @include font(clamp(2rem, 10vw, 9rem), 400, 1.2, null, 2px, start);
+    
+    color:color-mix(in srgb, $green-tea 40%, $white 60%);
+    font-family: $anton;
+    text-wrap:balance;
+   
+}
+
+.details {
+    @include flex(flex-start,flex-start, row wrap, 2rem, 1rem);
+    margin-top: 5rem;
+}
+
+.detail {
+    @include flex(center,flex-start, row nowrap,.45rem);
+    @include font(clamp(1.35rem, 1.99vw, 1.9rem), 500, 1, null, null, start);
+}
+
+.image__wrapper{ 
+    // aspect-ratio: 16/7;
+    height: 30rem;
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+.image {
+    @include size(100%,100%);
+    object-fit: cover;
+    object-position: center;
+}
+
+@media only screen {
+    @media (min-width:730px){
+        .image__wrapper {
+            height:60vh;
+        }
+    }
+}

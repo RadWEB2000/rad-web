@@ -1,0 +1,27 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    // background-color: red;
+    margin:2vh auto;
+    width:clamp(5rem, calc(3 * 44rem + 2 * 4rem), 98%);
+}
+
+.head {
+    @include flex(center, space-between, row wrap, null, 1.3rem);
+    border-bottom:1px solid $green-tea;
+    padding: .2rem .6rem;
+}
+
+.title {
+    @include font(clamp(2.7rem, 5vw, 3.7rem), 600, 1, null, null, start);
+    color:color-mix(in srgb, $white 70%, $green-lime 30%);
+}
+
+.cards {
+    display: grid;
+    gap:2rem;
+    grid-template-columns: repeat(auto-fit, clamp(5rem,44rem,97%));
+    justify-content: center;
+    margin-top: 1rem;
+}

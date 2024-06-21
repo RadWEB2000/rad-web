@@ -1,0 +1,114 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    @include flex(flex-start, flex-start, column, null, 2rem);
+    margin:5vh auto;
+    position: relative;
+    width: clamp(10rem, 140rem, 95%);
+}
+
+.title {
+    @include font(clamp(6.2rem, 7vw, 13rem), 400, 1, uppercase, null, start);
+    font-family: $anton;
+    padding: 1rem 2rem;
+    width: 100%;
+}
+
+.cards {
+    @include flex(flex-start,flex-start, column, null, 2rem);
+    margin:2vh 1rem 1rem auto;
+    width:clamp(5rem, 30rem, 95%);
+}
+
+.card {
+    padding: 0.2rem 0.45rem;
+}
+
+.card__index {
+    @include font(clamp(8rem, 5vw, 11rem), 400, 1, null, null, start);
+    color:$green-tea;
+    font-family: $anton;
+}
+
+.card__title {
+    @include font(clamp(2.5rem, 3.2vw, 4.3rem), 600, 1, null, null, start);
+}
+
+.card__content {
+    @include font(clamp(1.4rem, 1.5vw, 1.55rem), 400, 1.75, null, null, start);
+    color:$silver;
+}
+@media only screen {
+    @media (min-width:550px){
+        .title {
+            position:sticky;
+            top: 6rem;
+        }
+    }
+    @media (min-width:760px){
+        .wrapper {
+            margin: 8.5vh auto;
+        }
+    
+        .title {
+            font-size: clamp(6.2rem, 7.5vw, 13rem);
+            width: 50%;
+        }
+    
+        .cards {
+            margin: 2vh 3vw 1rem auto;
+            width: clamp(5rem, 35rem, 95%);
+        }
+    
+        .card {
+            padding: 0.2rem 0.45rem;
+        }
+    }
+    @media (min-width:1000px){
+        .wrapper {
+            @include flex(flex-start, flex-start, column, null, 2rem);
+            position: relative;
+        }
+    
+     
+        .cards {
+            margin: 2vh 0 1rem auto;
+            row-gap:12vh;
+            width: clamp(5rem, 55rem, 95%);
+        }
+    
+        .card {
+            align-items: center;
+            display: grid;
+            grid-template-columns: 15rem calc(100% - 15rem);
+            padding: 0.2rem 0.45rem;
+        }
+    
+        .card__index {
+            font-size: clamp(8rem, 11vw, 12rem);
+        }
+    
+        .card__content {
+            font-size: 1.45rem;
+            max-width: 35ch;
+            margin-top: .4rem;
+        }
+    }
+    @media (min-width:1500px){
+        .card {
+            gap:2rem;
+        }
+
+        .card__index {
+            @include flex(center,center);
+            font-size: clamp(8rem, 11vw, 15rem);
+        }
+
+        .card__content {
+            font-size: 1.55rem;
+            max-width: 35ch;
+        }
+    }
+
+}

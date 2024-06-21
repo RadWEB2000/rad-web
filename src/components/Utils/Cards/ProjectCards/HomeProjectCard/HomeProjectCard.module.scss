@@ -1,0 +1,149 @@
+@import "../../../../../styles/Mixins.scss";
+@import "../../../../../styles/Variables.scss";
+
+.wrapper {
+    // background: red;
+    margin:2vh auto;
+    width:clamp(5rem, 150rem, 95%);
+}
+
+.head {
+    @include flex(flex-start,flex-start,column-reverse);
+}
+
+.image__wrapper {
+    @include size(35rem, 100%);
+    border-radius: 2.3vw;
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
+
+.image {
+    @include size(100%,100%);
+    object-fit: cover;
+    object-position: center;
+}
+
+.title {
+    @include font(clamp(3rem, 5vw, 7rem), 600, 1.6, null, null, start);
+    color:$green-tea;
+}
+
+.line {
+    @include size(.2px,100%);
+    background-color: color-mix(in srgb, $jet 40%, $silver 70%);
+    display: block;
+}
+
+.description,
+.information {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding: 0.5rem;
+}
+
+.information__label,
+.description__label {
+    @include font(clamp(2rem, 3vw, 3rem), 700, 1, uppercase, null, start);
+    grid-column: 1;
+}
+
+.description__content,
+.information__content {
+    grid-column: 3/-1;
+}
+
+.description {
+    margin-top: 0.35rem;
+}
+
+
+.description__content{
+    @include font(clamp(1.45rem, 2vw, 1.9rem), 400, 1.6, null, null, start);
+    color: color-mix(in srgb, $jet 40%, $silver 70%);
+    grid-column: 3/-1;
+}
+
+
+.information__content {
+    @include font(clamp(1.66rem, 2.7vw, 2.5rem), 400, 1, null, null, end);
+    color: color-mix(in srgb, $jet 20%, $white 100%);
+}
+
+.button__wrapper {
+    @include flex(center,center);
+    margin-top: 1rem;
+}
+.button {
+    @include font(clamp(1.72rem, 2.4vw, 1.9rem), 700, null, null, center);
+    background-color: $green-tea;
+    border-radius: 1rem;
+    color:$black;
+    padding: 1.2rem 3.2rem;
+    transition:.12s ease-in-out background-color;
+    &:focus-within,
+    &:hover {
+        background-color: color-mix(in srgb, $green-tea 60%, $green-pastelle 70%);
+    }
+}
+
+@media only screen {
+    @media (min-width:700px){
+        .head {
+            align-items: end;
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+        }
+        .title {
+            grid-column: 1/4;
+        }
+        .image__wrapper {
+            aspect-ratio: 4/2.7;
+            height: unset;
+            grid-column: 4/-1;
+        }
+        .body {
+            display: grid;
+            grid-template-columns: repeat(11,1fr);
+        }
+        .description {
+            grid-column: 1/7;
+        }
+        .details {
+            grid-column: 7/-1;
+        }
+        .information__label,
+        .description__label {
+            font-size: clamp(1.68rem, 1.7vw, 2.2rem);
+        }
+        .informations {
+            @include flex(flex-start,flex-start,column);
+        }
+        .information {
+            @include flex(center, flex-start, row, 2rem);
+        }
+        .information__content {
+            font-size: clamp(1.66rem, 2.1vw, 1.8rem);
+        }
+        .button__wrapper {
+            justify-content: flex-start;
+        }
+    }
+    @media (min-width:905px){
+        .image__wrapper {
+            @include size(29rem,clamp(5rem, 45rem, 100%));
+            aspect-ratio: unset;
+            height: 25rem;
+            margin: 0 0 0 auto;
+        }
+    }
+    @media (min-width:1450px){
+        .details {
+            padding: 4rem;
+        }
+        .button__wrapper {
+            margin-top: 4rem;
+        }
+    }
+}

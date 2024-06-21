@@ -1,0 +1,12 @@
+@import "../../../../styles/Animations.scss";
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.title {
+    @include font(clamp(3.1rem, 3.6vw, 4rem), 800, 1.3, null, null, start);
+    color:$green-malachite;
+}
+
+.cards {
+    @include flex(flex-start,flex-start, row wrap, 1rem, 1rem);
+}

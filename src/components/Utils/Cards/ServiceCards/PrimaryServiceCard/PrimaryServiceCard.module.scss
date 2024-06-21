@@ -1,0 +1,70 @@
+@import "../../../../../styles/Mixins.scss";
+@import "../../../../../styles/Variables.scss";
+
+.wrapper {
+    @include flex(flex-start,space-evenly,column, null, 1.5rem);
+    @include size(40rem, clamp(5rem,39rem,95%));
+    // background: red;
+    box-shadow:0 0 .45rem rgba($green-lime,.15);
+    max-height: auto;
+    padding: 1.5rem;
+    transition:.12s linear box-shadow;
+    &:focus-within,
+    &:hover {
+    box-shadow: 0 0 .65rem rgba($green-lime, .32);
+    }
+}
+
+.counter,
+.button {
+    font-family: $mono;
+}
+
+.counter {
+    // background: blue;
+    margin: 0 0 0  auto;
+}
+
+.title {
+    @include font(clamp(3.5rem,3.8vw,4rem), 500, 1.13, null, null, start);
+    color:$green-tea;
+}
+
+.content {
+    @include font(clamp(1.3rem, 1.45vw, 1.5rem), 400, 1.7, null, null, start);
+    color:color-mix(in srgb, $silver 90%, $jet 20%);
+    margin-top: 1rem;
+    max-width: 75ch;
+}
+
+.button {
+    @include font(1.8rem, 300,1,uppercase, null,start);
+    position: relative;
+    &::after {
+        @include size(1.5px, 0%);
+        background-color: $white;
+        bottom: -0.25rem;
+        border-radius: 1rem;
+        left: 0;
+        position: absolute;
+        transition:.12s ease-in-out width;
+    }
+
+    &:focus-within,
+    &:hover {
+        &::after {
+            width: 100%;
+        }
+    }
+}
+
+@media only screen {
+    @media (min-width:850px){
+        .title {
+            font-size: clamp(4.5rem, 5vw, 6rem);
+        }
+        .content {
+            font-size: clamp(1.44rem, 1.58vw, 1.65rem);
+        }
+    }
+}

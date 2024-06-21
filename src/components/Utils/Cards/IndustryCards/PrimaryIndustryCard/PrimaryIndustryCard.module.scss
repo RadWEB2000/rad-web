@@ -1,0 +1,80 @@
+@import "../../../../../styles/Mixins.scss";
+@import "../../../../../styles/Variables.scss";
+
+.wrapper {
+    @include flex(center,flex-start,column, null, 1rem);
+    width:clamp(5rem,30rem, 98%);
+}
+
+
+.image {
+    aspect-ratio: 1/1;
+    background-color: color-mix(in srgb, $green-lime 15%, $green-tea 85%);
+    border-radius: 1rem;
+    position: relative;
+    width: 100%;
+}
+
+.icon {
+    
+    object-fit: cover;
+    object-position: center;
+    transform:scale(.75);
+}
+
+.box {
+    @include flex(flex-start,flex-start,column, null, .75rem);
+    padding: 0.45rem 1rem;
+}
+
+.title {
+    @include font(clamp(3.5rem, 4.1vw,6rem), 800, 1, null, null, start);
+    color:$black;
+}
+
+.content {
+    @include font(clamp(1.44rem,1.7vw,1.8rem), 400, 1.45, null, null, start);
+    color:color-mix(in srgb, $jet 20%, $black 80%);
+    max-width: 65ch;
+}
+
+.button {
+    @include font(1.9rem, 600, 1,uppercase,null,start);
+    color:$black;
+    font-family: $mono;
+    margin-top: .75rem;
+    position: relative;
+    &::after  {
+        @include size(2.5px,0%);
+        background-color: $black;
+        border-radius: 1rem;
+        bottom:-.5rem;
+        left: 0;
+        position: absolute;
+        transition:.22s linear width;
+    }
+    &:focus-within,
+    &:hover {
+        &::after {
+            width: 100%;
+        }
+    }
+}
+
+@media only screen {
+    @media (min-width:1100px){
+        .wrapper {
+            column-gap:1rem;
+            display: grid;
+            grid-template-columns: 22rem calc(100% - 22rem);
+            width: clamp(5rem, 90rem, 98%);
+        }
+        .title {
+            font-size:clamp(3.5rem, 3.9vw, 4.5rem);
+        }
+
+        .content {
+            font-size:clamp(1.44rem, 1.5vw, 1.6rem);
+        }
+    }
+}

@@ -1,0 +1,78 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    @include flex(flex-start,flex-start,column, null,2rem);
+    padding: 2rem;
+    width:clamp(10rem, 70rem, 99%);
+}
+
+.title {
+    @include font(clamp(4.2rem, 5.6vw, 7.2rem), 400, 1.2, null, null, start);
+    color:$green-tea;
+    font-family: $anton;
+}
+
+.fields {
+    @include flex(flex-start,flex-start, row wrap, .66rem,2.66rem);
+    margin:1rem 0;
+}
+
+.field{
+    @include flex(flex-start,flex-start, column, null, .45rem);
+    &,
+    & >* {
+        width: 100%;
+    }
+}
+
+.field__label {
+    @include font(1.55rem, 700, 1.2, null, null, start);
+}
+
+.field__input {
+    background-color:rgba($jet, .24);
+    border-bottom:1px solid rgba($jet, .9);
+    border-radius: .25rem .25rem 0 0;
+    color:$silver;
+    height: 4rem;
+    padding: 0.4rem 1.4rem;
+    transition: .12s linear background-color, .12s linear border-bottom, .12s linear color;
+    &,
+    &::placeholder {
+        @include font(1.76rem, 400, 1, null, null, start);
+        font-family: $mono;
+    }
+    &:focus {
+        background-color: rgba($jet, .34);
+        border-bottom: 1px solid rgba($white, 1);
+        color:$white;
+        &:invalid {
+            border-bottom: 1px solid rgba(red, 1);
+        }
+        &:valid {
+            border-bottom: 1px solid rgba(green, 1);
+        }
+    }
+}
+
+
+.statute {
+    @include font(clamp(1.55rem, 1.62vw, 1.68rem),500, 1.8,null, null, start);
+    color:color-mix(in srgb, $silver 40%, $white 50%)
+}
+
+.button {
+    @include font(2.3rem, 700, 1, uppercase, null, center);
+    background-color:$green-pigment;
+    border-radius: .24vw;
+    margin:3.75vh 0 0 auto;
+    min-height: 4.2rem;
+    transition:.12s linear background-color;
+    width:clamp(5rem, 15rem, 95%);
+
+    &:focus-within,
+    &:hover {
+        background-color:$green-malachite;
+    }
+}

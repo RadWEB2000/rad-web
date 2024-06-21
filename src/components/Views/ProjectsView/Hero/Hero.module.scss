@@ -1,0 +1,41 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    @include flex(flex-start,flex-start,column);
+    margin: 10vh 0;
+    padding: 1.6vh 2.4vw;
+}
+
+.title, 
+.slogan {
+    @include font(unset, 400, 1.3, null, null, start);
+    font-family: $anton;
+    grid-column: 1;
+}
+
+.title {
+    font-size: clamp(7.2rem, 9.2vw, 18rem);
+}
+
+.slogan {
+    color:$green-lime;
+    font-size: clamp(4.2rem, 4.8vw, 6rem);
+}
+
+.content {
+    @include font(clamp(1.55rem, 1.67vw, 1.72rem), 400, 1.7, null, null, start);
+    grid-column: 2;
+    color:$silver;
+    margin: 0 0 0 auto;
+    max-width: 70ch;
+}
+
+@media only screen {
+    @media (min-width:1200px){
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+}

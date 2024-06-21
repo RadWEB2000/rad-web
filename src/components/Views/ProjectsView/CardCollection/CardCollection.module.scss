@@ -1,0 +1,33 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Animations.scss";
+@import "../../../../styles/Variables.scss";
+
+
+.wrapper {
+    margin:7vh auto;
+    width:clamp(5rem, 130rem, 95%);
+
+}
+
+.box {
+    @include animationView(show_x_left);  
+    @include flex(flex-start,flex-start,column, null, 1.3rem);
+}
+
+.title {
+    @include font(clamp(4rem, 6.2vw, 9.22rem), 400, 1.3, null, null, start);
+    color:$green-tea;
+    font-family: $anton;
+}
+
+.content {
+    @include font(clamp(1.7rem, 1.82vw, 1.9rem), 400, 1.9, null, null, start);
+    max-width: 70ch;
+}
+
+.cards {
+    @include animationView(show_x_right);
+    @include flex(flex-start,flex-end, row wrap, 1.2rem, 1.2rem);
+    margin-top: 2.2vh;
+}
+

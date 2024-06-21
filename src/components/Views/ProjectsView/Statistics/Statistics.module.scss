@@ -1,0 +1,50 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+@import "../../../../styles/Animations.scss";
+
+
+.wrapper {
+    background-color: $green-lime;
+    color:$black;
+    padding: 12vh 3.2vw;
+}
+
+
+.box {
+    @include flex(flex-start,flex-start, column, null, 3.2rem);
+}
+
+.title {
+    @include font(clamp(5rem, 6.2vw, 9rem), 400, 1, null, null, start);
+    font-family: $anton;
+}
+
+.content {
+    @include font(clamp(1.7rem, 1.8vw, 2rem), 500, 1.9, null, null, start);
+    color:$jet;
+    max-width: 75ch;
+}
+
+.cards {
+    @include flex(flex-start,flex-end, row wrap, 1rem, 1rem);
+    margin-top: 5vh;
+}
+
+
+.card {
+    @include animationView(show_x_right);
+    @include flex(flex-start, center, column, 1rem);
+    width:clamp(5rem, 25rem, 99%);
+    & >* {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+.card__content {
+    @include font(clamp(4rem, 6.6vw, 12rem), 700, 1, null, null);
+}
+
+.card__title {
+    @include font(clamp(1.66rem, 2vw, 2.3rem), 900, 1.2, null, null);
+}

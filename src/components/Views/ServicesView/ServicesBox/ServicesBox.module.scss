@@ -1,0 +1,118 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.box {
+    @include flex(flex-start,flex-start,column, null, 1.2rem);
+    
+
+}
+
+.wrapper{
+    margin: 4vh 0;
+}
+
+.head {
+    @include flex(center,flex-start,column, .5rem,.35rem);
+}
+
+.line {
+    @include size(2px, 7rem);
+    background-color: $green-lime;
+    border-radius: 3rem;
+}
+
+.title {
+    @include font(clamp(2.85rem,3.85vw, 6rem), 400, 1, null, null, start);
+    color:$green-lime;
+    font-family: $anton;
+}
+
+.content {
+    @include font(clamp(1.4rem, 1.55vw, 1.6rem), 400, 1.9, null, null, start);
+    color:$silver;
+    margin:1rem auto;
+    max-width: 40ch;
+}
+
+.cards {
+    @include flex(center,flex-start, column, null, 1rem);
+    width: 100%;
+    margin-top: 1rem;
+}
+
+@media only screen {
+    @media (min-width:610px){
+        .content {
+            margin:1rem 0;
+            max-width: 55ch;
+            padding: 2rem;
+        }
+        .head {
+            align-items: flex-start;
+        }
+        .line {
+            width: 20rem;
+        }
+        .cards {
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+    }
+    @media (min-width:840px){
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+        }
+        
+    }
+    @media (min-width:855px){
+        .head {
+            padding: 0rem 1rem;
+            row-gap:2rem;
+        }
+        .title {
+            font-size: clamp(4.85rem, 5.15vw, 8rem);
+        }
+        .content {
+            font-size: clamp(1.55rem, 1.55vw, 1.76rem);
+            margin-top: 0.5rem;
+            max-width: 60ch;
+        }
+        .button {
+            padding: .3rem 2.4rem;
+        }
+    }
+    @media (min-width:1240px){
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            position: relative;
+        }
+        .cards {
+            margin-top: 0;
+            grid-template-columns: repeat(2,1fr);
+            @include flex(flex-start,flex-start,row wrap);
+            padding:0 1rem;
+            & >* {
+                margin: 0 auto;
+            }
+        }
+        // .box {
+        //     position: relative;
+        // }
+        // .button,
+        // .head {
+        //     position:sticky;
+        //     top: 10rem;
+        // }
+
+        // .head {
+        //     top: 10rem;
+        // }
+        // .button {
+        //     top: 25rem;
+        // }
+
+
+    }
+}

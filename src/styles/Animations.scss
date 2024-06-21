@@ -1,0 +1,55 @@
+
+@keyframes show_x_left {
+    from {  
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(-6rem);
+    }
+        
+    to {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0rem);
+    }
+}
+@keyframes show_x_right {
+    from {  
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(6rem);
+    }
+        
+    to {
+        opacity: 1;
+            visibility: visible;
+        transform: translateX(0rem);
+    }
+}
+
+@keyframes show_y {
+    from {  
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(4rem) scale(.7);
+        }
+        
+    to {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0rem) scale(1);
+    }
+}
+
+@keyframes show__general {
+    from {  
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(.8);
+    }
+
+    to {
+        opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+    }
+}

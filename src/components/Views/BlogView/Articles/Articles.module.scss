@@ -1,0 +1,20 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    display: grid;
+    gap:.13rem;
+    grid-template-columns: repeat(auto-fit, clamp(5rem,44rem,97%));
+    justify-content: center;
+    width: 99%;
+    margin: 4vh auto;
+}
+
+
+@media only screen {
+    @media (min-width:1360px){
+        .wrapper {
+    grid-template-columns: repeat(3, clamp(5rem, 44rem, 97%));
+        }
+    }
+}

@@ -1,0 +1,105 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+$img_size:25rem;
+
+.wrapper {
+    align-items: center;
+    display: grid;
+    justify-items: center;
+}
+
+.box {
+    padding: 4rem;
+}
+
+.button {
+    padding: 0.25rem 1rem;
+}
+
+.title,
+.slogan {
+    @include font(unset, 400, 1.23, null, null, start);
+    font-family: $anton;
+}
+
+.title {
+    font-size: clamp(4.5rem, 6vw, 12rem);
+}
+.slogan {
+    color:$green-lime;
+    font-size: clamp(2.5rem, 4vw,5rem);
+}
+
+.image__wrapper {
+    @include size($img_size,$img_size);
+    background-color: $green-lime;
+    display: block;
+    position: relative;
+}
+
+.media {
+    width: 100%;
+}
+
+.image {
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    position: absolute;
+    transform: translate(-2rem,2rem) rotateY(180deg);
+}
+
+.content {
+    @include font(clamp(1.45rem, 1.7vw, 1.82rem), 400, 1.85, null, null, start);
+    color:$silver;
+    margin-top: 1.2rem;
+    max-width: 65ch;
+}
+
+@media only screen {
+    @media (min-width:480px){
+        .box {
+            margin: 0 auto 0 1rem;
+        }
+        .image__wrapper {
+            margin: 0 1rem 0 auto;
+        }
+    }
+    @media (min-width:770px){
+        $img_size: 35rem;
+        .wrapper {
+            align-items: center;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            justify-items: center;
+            min-height: 80vh;
+        }
+
+        .box,
+        .image__wrapper {
+            margin:unset;
+        }
+        .media {
+            width:unset;
+        }
+        .image__wrapper {
+            @include size($img_size, $img_size);
+        }
+    }
+    @media (min-width:1260px){
+        $img_size: 42rem;
+        .image__wrapper {
+            @include size($img_size, $img_size);
+        }
+    }
+    @media (min-width:1600px){
+        $img_size: 50rem;
+        .image__wrapper {
+            @include size($img_size, $img_size);
+        }
+        .image {
+            transform: translate(-2rem, 2rem) rotateY(180deg) scale(1.35);
+        }
+    }
+}

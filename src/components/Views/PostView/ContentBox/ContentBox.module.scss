@@ -1,0 +1,25 @@
+.wrapper {
+    grid-column: 1/-1;
+    margin:1rem auto;
+    padding: 1rem;
+    width:clamp(5rem, 90rem, 95%);
+
+    p {
+        max-width: 75ch;
+    }
+}
+
+@media only screen {
+    @media (min-width:1200px){
+        .wrapper {
+            grid-column: 1/8;
+            grid-row: 1/5;
+            padding: 2rem 2rem 4vw 2rem;
+        }
+    }
+    @media (min-width:1200px){
+        .wrapper {
+            grid-column: 2/9;
+        }
+    }
+}

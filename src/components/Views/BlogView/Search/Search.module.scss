@@ -1,0 +1,29 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    @include size(auto, clamp(5rem, 45rem, 95%));
+}
+
+.field{
+    @include font(clamp(1.33rem, 1.45vw, 1.55rem), 400, 1.3, null, null, start);
+    @include size(4rem, 100%);
+    border-bottom:1.2px solid color-mix(in srgb, $onyx 10%, $white 90%);
+    color: color-mix(in srgb, $onyx 10%, $white 90%);
+    display:block;
+    font-family: $mono;
+    padding: 0.4rem 1.2rem;
+    transition:.12s linear border-bottom-color, .12s linear color;
+
+    &:focus-within,
+    &:hover {
+        border-bottom-color:color-mix(in srgb, $green-lime 55%, $white 45%);
+        color:color-mix(in srgb, $green-lime 55%, $white 45%);
+    }
+
+    &::placeholder {
+    color: color-mix(in srgb, $onyx 20%, $white 80%);
+
+    }
+    
+}

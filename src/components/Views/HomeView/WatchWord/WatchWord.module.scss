@@ -1,0 +1,19 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    margin:10vh 0;
+    padding: 5vh 5vw;
+}
+
+.content {
+    @include font(clamp(3.5rem,12vw,10rem), 400, 1.7, null, null, center);
+    background-color:color-mix(in srgb, rgba($green-tea,.26) 5%, rgba($jet,.26) 30%);
+    border-radius: 3rem;
+    color:$green;
+    display: block;
+    font-family: $anton;
+    padding: 3vh 0;
+    width: 100%;
+}
+

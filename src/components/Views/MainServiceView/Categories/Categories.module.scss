@@ -1,0 +1,123 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+@keyframes cardShow {
+    from {
+        filter: grayscale(100%);
+        opacity: 0;
+        transform: translateX(5rem);
+        visibility: hidden;
+
+    }
+
+    to {
+        filter: grayscale(0%);
+        opacity: 1;
+        transform: translateX(0rem);
+        visibility: visible;
+    }
+}
+
+.wrapper {
+    margin: 7vh 0;
+}
+
+.cards {
+    @include flex(center,flex-start,column, null, 1.93rem);
+}
+
+.card {
+    @include animationView(cardShow);
+    align-items: center;
+    border:1.2px solid $green-tea;
+    border-radius: .82rem;
+    display: grid;
+    grid-template-columns:calc(100% - 7.65rem) 6.15rem;
+    gap:1.5rem;
+    padding: 1.15rem 1.15rem;
+    width:clamp(10rem, 45rem, 96%);
+}
+
+.card__button {
+    @include flex(center,center);
+    @include size(6.15rem, 6.15rem);
+    background-color:$green-tea;
+    border-radius: 1.2rem;
+    color:$black;
+    font-size: 2.75rem;   
+    transition: .22s linear background-color;
+    &:focus-within,
+    &:hover {
+        background-color: $green-lime;
+    }
+}
+
+.card__title {
+    @include font(clamp(4.1rem, 5.5vw, 6rem), 600, 1.1, null, null, start);
+    color:$green-tea;
+}
+
+.card__content {
+    @include font(clamp(1.22rem, 1.32vw, 1.43rem), 400, 1.36, null, null, start);
+    color:$silver;
+    font-family: $mono;
+    margin-top: .67rem;
+}
+
+.box {
+    padding: 0.5rem 1rem;
+}
+
+.title {
+    @include font(clamp(4.5rem, 7.5vw, 9rem), 400, 1.3, null, null, start);
+    font-family: $anton;
+    text-wrap:balance;
+}
+
+.content {
+    @include font(clamp(1.45rem, 1.55vw, 1.7rem), 400, 1.9, null, null, start);
+    color:$silver;
+}
+
+@media only screen {
+    @media (min-width:1000px){
+        .wrapper {
+            display: grid;
+            grid-template-columns:calc(100% - 50rem) 50rem;
+            padding: 0rem 4vw;
+        }
+        .box {
+            grid-column: 1;
+        }
+        .cards {
+            align-items: flex-end;
+            justify-content: center;
+            grid-column: 2;
+            margin-top: 15vh;
+        }
+    }
+    @media (min-width:1620px){
+        .wrapper {
+            align-items: start;
+            justify-items: start;
+            display: grid;
+            grid-template-columns: repeat(7,1fr);
+        }
+        .box {
+            grid-column: 1/5;
+        }
+        .cards {
+            grid-column: 5/-1;
+            row-gap:2.4rem;
+        }
+        .card {
+            width: 92.5%;
+        }
+        .card__title {
+            font-size:clamp(6rem, 7.5vw, 9rem) ;
+        }
+        .card__content{
+            font-size: clamp(1.5rem, 1.65vw, 1.7rem);
+        }
+    }
+}

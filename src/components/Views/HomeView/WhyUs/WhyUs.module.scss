@@ -1,0 +1,14 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    background-color: $green-malachite;
+    padding: 17vh 3vw 5rem 3vw;
+}
+
+.content {
+    @include font(clamp(2.2rem, 4vw, 3.7rem), 400, 1.7, null, null, start);
+    color:$black;
+    font-family: $anton;
+    max-width: 55ch;
+}

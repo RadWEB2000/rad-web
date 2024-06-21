@@ -1,0 +1,76 @@
+@import "../../../../../styles/Mixins.scss";
+@import "../../../../../styles/Variables.scss";
+
+.wrapper {
+    @include flex(flex-start,flex-start,column);
+    width:clamp(5rem,45rem,95%);
+    & >* {
+        width: 100%;
+    }
+}
+
+.image__wrapper {
+    aspect-ratio: 16/10;
+    border-radius: .6rem;
+    display: block;
+    margin-bottom: .6rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.image {
+    @include size(100%,100%);
+    object-fit: cover;
+    object-position: center;
+}
+
+.box,
+.details {
+    padding: .6rem;
+}
+
+.title {
+    @include font(clamp(1.9rem, 2.7vw, 2.7rem), 600, 1.4, null, null, start);
+    color:$green-tea;
+    text-wrap:pretty;
+}
+
+.excerpt{
+    @include font(clamp(1.44rem, 1.54vw, 1.62rem), 400, 1.6, null, null, start);
+    color:$silver;
+}
+
+.details {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-top: .45rem;
+}
+
+.author,
+.release {
+    @include font(1.45rem, 500, 1, null, null,unset);
+    font-family: $mono;
+}
+
+.author {
+    text-align: start;
+}
+
+.release {
+    text-align: end;
+}
+
+.button {
+    @include font(1.6rem, 600, 1, uppercase, null,center);
+    background-color: $green-tea;
+    border-radius: 2rem;
+    display: block;
+    color:$black;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    transition:.12s ease-in-out background-color;
+    &:focus-within,
+    &:hover  {
+        background-color: color-mix(in srgb, $green-tea 40%, $green-lime 60%);
+    }
+}

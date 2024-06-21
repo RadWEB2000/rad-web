@@ -1,0 +1,65 @@
+@import "../../../../../styles/Mixins.scss";
+@import "../../../../../styles/Variables.scss";
+
+.wrapper {
+    @include flex(flex-start,flex-start,column, null, .5rem);
+    background-color: color-mix(in srgb, $jet 35%, $black 65%);
+    border-radius: .72rem;
+    padding: 1.82rem 1.5rem;
+    width:35rem;
+    max-width: 95%;   
+    &:focus-within,
+    &:hover {
+        .image {
+            transform: scale(1.05);
+        }
+        .title {
+            color:$green;
+        }
+    }
+}
+
+.image__wrapper {
+    aspect-ratio: 16/14;
+    border-radius: 1.22rem;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.image {
+    object-fit: cover;
+    object-position: center;
+    transition: .23s linear transform;
+}
+
+.title {
+    @include font(clamp(1.66rem, 1.9vw, 2.3rem), 600, 1.4, null, null, start);
+    margin-top: 1.3rem;
+    transition: .23s linear color;
+}
+
+.details {
+    @include flex(center,space-between, row wrap, .23rem, .23rem);
+    width: 100%;
+    margin-bottom: 0.45rem;
+}
+
+.category {
+    @include font(1.42rem, 500, 1, null, null, center);
+    border:2px solid rgba($white,.4);
+    border-radius: 1.2rem;
+    padding: 0.45rem 1rem;
+    transition:.012s linear background-color, .012s linear color;
+    &:focus-within,
+    &:hover {
+        background-color: $white;
+        color:$black;
+    }
+}
+
+.release {
+    @include font(1.35rem, 400, 1, null, null, center);
+    font-family: $mono;
+}

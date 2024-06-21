@@ -1,0 +1,33 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    @include flex(flex-start,flex-start,row wrap,.7rem, .7rem, true);
+    padding: 1rem 3rem;
+}
+
+.card {
+    @include flex(center,center);
+    @include font(clamp(1.65rem, 1.7vw, 1.75rem), 600, 1, null, null, center);
+    border-radius: 1.26rem;
+    background-color:color-mix(in srgb, $black 50%, $jet 20%);
+    padding: 1.25rem 2.1rem;   
+    transition: .22s linear background-color, .22s linear  box-shadow, .22s linear  color;
+    &:focus-within,
+    &:hover {
+        background-color: color-mix(in srgb, $green 50%, $green-tea 70%);
+        box-shadow: 0 0 1.2rem .25rem rgba($green, .4);
+        color:$black;
+    }
+}
+
+@media only screen {
+    @media (min-width:1240px){
+        .wrapper {
+            grid-row: 1;
+            height: 10rem;
+            max-height: auto;
+            padding: 0.4rem 0.3rem;
+        }
+    }
+}

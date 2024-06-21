@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import './Mixins.scss';
+@import './Variables.scss';
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-tap-highlight-color: rgba($black, 0);
+}
+
+
+
+::after,
+::before {
+	content: '';
+	position: absolute;
+}
+
+::selection {
+	background-color: color-mix(in srgb, $green-tea 70%, $green-lime 10%);
+	color:black;
+}
+
+
+:focus,
+:focus-within {
+	outline: none;
+}
+
+a {
+	background: transparent;
+	color: inherit;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+button {
+	cursor: pointer;
+}
+
+body {
+	background-attachment: fixed;
+	background-color: $black;
+	background-image: linear-gradient(to bottom right, transparent, transparent, transparent,transparent, rgba(7, 44, 11, .34), rgba(7, 44, 11,.65));
+	background-position: center;
+	color: $white;
+	font-family: $inter;
+	font-weight: 400;
+	font-size: 1.6rem;
+	overflow-x: hidden;
+	transition: 0.2s linear all;
+
+}
+
+html {
+	font-size: 62.5%;
+}
+
+button,
+input,
+textarea {
+	background: transparent;
+	border: none;
+	font-family: inherit;
+	outline: none;
+}
+
+li,
+ol,
+ul {
+	list-style: none;
+}
+
+p {
+	text-wrap: balance;
+}
+
+input[type="search"]{
+	&::-webkit-search-cancel-button {
+			display: none;
+	
+		}
+}

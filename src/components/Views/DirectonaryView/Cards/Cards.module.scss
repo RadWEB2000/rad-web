@@ -1,0 +1,14 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+
+.wrapper {
+    align-items: center;
+    display: grid;
+    gap:1rem;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(auto-fit, clamp(9rem, 35rem, 100%));
+    justify-items: center;
+    margin:2vh auto;
+    width:clamp(5rem, calc(4 * 36rem), 90%);
+}

@@ -1,0 +1,16 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.box {
+    @include flex(center,center,column);
+    margin:10vh auto;
+}
+
+.title {
+    @include font(clamp(4.15rem, 6.65vw, 13rem), 400, 1.25,uppercase, null,center);
+    font-family: $anton;
+    margin-bottom: 3rem;
+    &::first-line {
+        color:$green-tea;
+    }
+}

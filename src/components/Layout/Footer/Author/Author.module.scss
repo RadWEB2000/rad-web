@@ -1,0 +1,17 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+
+.wrapper {
+    background-color: $black;
+    background-color: color-mix(in srgb, $green-dark 5%, $black 80%);
+    padding: 2rem 4rem ;
+    grid-column: 1/-1;
+}
+
+.content {
+    @include font(1.55rem, 500, 1, null, null, start);
+    cursor: default;
+    font-family: $mono;
+    user-select: none;
+}

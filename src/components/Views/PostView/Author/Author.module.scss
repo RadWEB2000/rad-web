@@ -1,0 +1,88 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    $gridColumn: 10rem;
+    align-items: center;
+    margin: 1vh auto;
+    justify-items: center;
+    display: grid;
+    // grid-template-columns: $gridColumn calc(100% - $gridColumn);
+    padding: 2rem 3rem;
+    width: clamp(4rem, 48rem, 95%);
+}
+
+.image__wrapper {
+    // @include size(6rem,6rem);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    display: block;
+    grid-column: 1;
+    overflow: hidden;
+    position: relative;
+    width: clamp(4rem,15rem, 100%);
+    // width: 100%;
+}
+
+.image {
+    @include size(100%,100%);
+    object-fit: cover;
+    object-position: top;
+}
+
+.box {
+    @include flex(flex-start,flex-start,column);
+    padding: 0.4rem;
+    & >* {
+        width: 100%;
+    }
+}
+
+.fullname {
+    @include font(clamp(2.4rem, 2.6vw, 3rem), 400, 1.3, null, null, center);
+    font-family: $anton;
+    transition:.12s ease-in-out color;
+    &:focus-within,
+    &:hover {
+        color:$green-tea;
+    }
+}
+
+.occupation {
+    @include font(clamp(1.45rem, 1.8vw, 1.5rem), 400, 1.25, null, null, center);
+    color:$silver;
+    font-family: $mono;
+    margin-top: 0.45rem;
+    text-wrap:balance;
+}
+
+@media only screen {
+    @media (min-width:600px){
+        .wrapper {
+            $gridColumn: 10rem;
+            gap:1rem;
+            grid-template-columns: $gridColumn calc(100% - $gridColumn);
+        }
+        .fullname,
+        .occupation {
+            text-align: start;
+        }
+    }
+    @media (min-width:900px) {
+        .wrapper {
+            grid-column: 7/-1;
+        }
+    }
+    @media (min-width:1200px) {
+        .wrapper {
+            grid-column: 8/-1;
+            grid-row: 2;
+        }
+    }
+        @media (min-width:1400px) {
+            .wrapper {
+                grid-column: 9/-1;
+    
+            }
+        }
+}

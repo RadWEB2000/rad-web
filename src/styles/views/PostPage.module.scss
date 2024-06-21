@@ -1,0 +1,16 @@
+@import "../Mixins.scss";
+@import "../Variables.scss";
+
+@media only screen {
+    @media (min-width:900px){
+        .main {
+            display: grid;
+            grid-template-columns: repeat(12,1fr);
+        }
+    }
+    @media (min-width:1200px){
+        .main {
+            margin: 7vh 0 5vh;
+        }
+    }
+}

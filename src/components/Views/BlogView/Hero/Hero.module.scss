@@ -1,0 +1,49 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    @include flex(flex-start,flex-end,column);
+    background-image: linear-gradient(to bottom, transparent, transparent, rgba($green-lime,.04));
+    padding: 10vh 3rem;
+    min-height: 60vh;
+}
+
+.title {
+    font-family: $anton;
+    & >* {
+        @include font(unset, 400, 1.1, uppercase, null, start);
+        display: block;
+    }
+
+    &  > * {
+        &:nth-of-type(1){
+            font-size: clamp(4rem, 6vw, 16rem);
+            color:$green-lime;
+        }
+        &:nth-of-type(2) {
+            font-size: clamp(3.4rem, 3vw, 8.5rem);
+        }
+    }
+}
+
+.categories {
+    @include flex(center,flex-start,row wrap, .86rem, .86rem);
+    margin-top: 1rem;
+    padding: 0.45rem;
+    width:clamp(5rem, 70rem, 100%);
+}
+
+.category {
+    @include flex(center,center);
+    @include font(clamp(1.32rem, 1.55vw, 1.62rem), 450, 1, null, null, center);
+    border-radius: 1rem;
+    background-color: color-mix(in srgb, $green-tea 50%, $white 45%);
+    color: $black;
+    padding: 0.6rem 1.7rem;
+    transition: .12s linear background-color, .12s linear box-shadow;
+    &:focus-within,
+    &:hover {
+        background-color: color-mix(in srgb, $green-tea 75%, $white 15%);
+        box-shadow: 0 0 1rem .5rem rgba($green-tea, .3);
+    }
+}

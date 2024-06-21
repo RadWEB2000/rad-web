@@ -1,0 +1,13 @@
+@import "../Mixins.scss";
+@import "../Variables.scss";
+
+.top {
+    @include flex(flex-start, space-around, row wrap, null, null, true);
+    background-color: color-mix(in srgb, $black 75%, $green-pigment 10%);
+    padding: 5.5vh 4vw;
+}
+
+.cards {
+    @include flex(flex-start, flex-start, row wrap, 1rem, 1rem);
+    width:clamp(5rem, 55rem, 99%);
+}

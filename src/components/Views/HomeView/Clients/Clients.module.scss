@@ -1,0 +1,113 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.card {
+    @include flex(center,center);
+    aspect-ratio: 1/1;
+    border-radius: .72rem;
+    width: 100%;
+    background-color: color-mix(in srgb, $onyx 10%, $black 60%);
+    padding: 1rem;
+    transition:.12s linear background-color;
+    &:focus-within,
+    &:hover {
+        background-color: color-mix(in srgb, $onyx 20%, $black 60%);
+    }
+}
+
+.card__image__wrapper {
+    @include size(50%,50%);
+    display: block;
+    filter:grayscale(100%) invert(1);
+    position: relative;
+}
+
+.card__image{
+    @include size(100%, 100%);
+    object-fit: contain;
+    object-position: center;
+}
+
+.wrapper {
+    background-color: color-mix(in srgb, rgba($onyx,.25) 70%, rgba($green-dark,.05) 40%);
+    margin:5vh auto;
+    box-shadow: 0 0 2rem rgba($green-malachite,.2);
+    min-height:60vh;
+    width:clamp(5rem, 170rem, 95%);
+    padding: 4rem;
+    border-radius: 2rem;
+}
+
+.cards {
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 13rem);
+    justify-items: center;
+    justify-content: center;
+    padding-top: 1.5rem;
+    gap:2rem;
+    width: 100%;
+}
+
+.title {
+    @include font(clamp(3rem, 9.7vw, 13rem), 400, 1, uppercase, null, center);
+    font-family: $anton;
+}
+
+.content {
+    @include font(clamp(1.42rem, 2vw, 1.75rem), 400, 1.7, null, null, center);
+    color:$silver;
+    max-width:75ch;
+    margin-top: 1.5rem;
+}
+
+@media only screen {
+    @media (min-width:650px){
+        .cards {
+            grid-template-columns: repeat(3, 16rem);
+        }
+    }
+    @media (min-width:1030px){
+        .wrapper {
+            align-items: center;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+        }
+        .cards {
+            justify-items: unset;
+            grid-template-columns: repeat(3, 13rem);
+            padding-top:unset;
+            gap: .62rem;
+        }
+
+        .title {
+            font-size: clamp(3rem, 9.7vw, 9rem);
+        }
+
+        .content {
+            font-size: clamp(1.42rem, 2vw, 1.75rem);
+        }
+        .content,
+        .title {
+            text-align: start;
+        }
+    }
+    @media (min-width:1350px){
+        .wrapper {
+            min-height:70vh;
+        }
+        .cards {
+            grid-template-columns: repeat(3, 17rem);
+            
+        }
+
+        .title {
+            font-size: clamp(3rem, 9.7vw, 11rem);
+            max-width: 70ch;
+        }
+
+        .content {
+            font-size: clamp(1.42rem, 2vw, 1.75rem);
+        }
+    }
+}

@@ -1,0 +1,87 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    @include flex(flex-start,flex-start,column, null, 2rem, true);
+    padding: 0 2rem;
+}
+
+.box {
+    @include flex(flex-start, center, column, null, 1.2rem, true);
+    min-height:75vh;
+}
+
+.buttons {
+    @include flex(flex-start,flex-start,row wrap, .56rem,.56rem,true);
+    margin-top: 1.4rem;
+}
+
+.button {
+    @include font(clamp(1.6rem, 2vw, 2.4rem), 400, null, null, start);
+    background-color: $jet;
+    border-radius: .62rem;
+    padding: 0.86rem 1.8rem;
+    transition:.12s linear background-color, .12s linear transform;
+    &:focus-within,
+    &:hover {
+        background-color: $green-dark;
+        transform: scale(.96);
+    }
+}
+
+.title {
+    @include font(clamp(2rem, 4vw, 3.7rem), 400, 1, null, null, start);
+}
+
+.slogan {
+    @include font(clamp(2rem,13vw, 17rem), 400, .92, uppercase,null, start);
+    font-family: $anton;
+    &::first-line {
+        color:$green-pastelle;
+    }
+}
+
+.callToAction {
+    @include font(clamp(1.75rem, 3vw, 3.6rem), 400, 1, null, null, start);
+    color: color-mix(in srgb, $silver 55%, $onyx 30%);
+}
+
+
+.socials {
+    @include flex(center,flex-end, row wrap, 1rem, 1rem, true);
+    width: 100%;
+}
+
+.social__link {
+    @include font(clamp(1.55rem, 2vw, 1.62rem), 300, 1, null, null, start);
+    font-family: $mono;
+    position: relative;
+    transition: .12s ease-in-out color;
+    &::after {
+        @include size(2px,100%);
+        background-color: $green-lime;
+        bottom: -.25rem;
+        left: 50%;
+        transform: translateX(-50%) scaleX(0);
+        transition:.12s ease-in-out transform;
+    }
+    &:focus-within,
+    &:hover {
+        color:$green-lime;
+        &::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+    }
+}
+
+@media only screen {
+    @media (min-width:1050px){
+        .box {
+            min-height: 89vh;
+            padding-top: 10vh;
+        }
+        .socials {
+            min-height: 11vh;
+        }
+    }
+}

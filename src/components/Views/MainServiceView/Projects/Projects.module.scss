@@ -1,0 +1,51 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    background-color: color-mix(in srgb, $green-dark 30%, transparent 40%);
+    min-height:60vh;
+    padding: 2rem 2vw;
+}
+
+.box {
+}
+
+.title {
+    @include font(clamp(5rem, 7.8vw, 12rem), 400, 1.13, null, null, start);
+    font-family: $anton;
+    text-wrap: balance;
+}
+
+.content {
+    @include font(clamp(1.33rem, 1.6vw, 1.72rem), 400, 1.5, null, null, start);
+    color:$silver;
+    max-width: 60ch;
+}
+
+.cards {
+    align-items: center;
+    justify-items: center;
+    gap:.23rem;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    width: 100%;
+}
+
+@media only screen {
+    @media (min-width:600px){
+        .wrapper {
+            padding: 6vh 3vw;
+        }
+        .title {
+            font-size: clamp(6.75rem, 8.8vw, 15rem);
+        }
+        .content {
+            font-size: clamp(1.53rem, 1.6vw, 1.72rem);
+        }
+        .cards {
+            direction:rtl;
+            grid-template-columns: repeat(auto-fit, 40rem);
+            margin-top: 6vh;
+        }
+    }
+}

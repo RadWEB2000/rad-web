@@ -1,0 +1,12 @@
+export {default as AboutUs} from "v-home/AboutUs";
+export {default as AboutUsCards} from "v-home/AboutUs/Cards"
+export {default as Blog} from "v-home/Blog"
+export {default as Clients} from "v-home/Clients"
+export {default as Hero} from "v-home/Hero";
+export {default as HowTo} from "v-home/HowTo";
+export {default as HowToCard} from "v-home/HowTo/Card";
+export {default as Projects} from "v-home/Projects"
+export {default as Services} from "v-home/Services"
+export {default as Statistics} from "v-home/Statistics"
+export {default as WatchWord} from "v-home/WatchWord"
+export {default as WhyUs} from "v-home/WhyUs"

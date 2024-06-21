@@ -1,0 +1,1 @@
+export {default} from "v-m-service/Industries/Industries"

@@ -1,0 +1,18 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    @include flex(flex-start,flex-start, column, null, .5rem);
+    padding: 2rem;
+}
+
+.brand {
+    @include font(clamp(7rem, 11vw, 11rem), 400, 1, null, null, start);
+    color:$green-pastelle;
+    font-family: $anton;
+}
+
+.slogan {
+    @include font(clamp(1.7rem, 2.4vw, 2.5rem), 400, 1.4, null, null, start);
+    font-style: normal;
+}

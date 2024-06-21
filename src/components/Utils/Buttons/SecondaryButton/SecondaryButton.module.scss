@@ -1,0 +1,26 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    @include flex(center,center, row nowrap,1rem);
+    border-radius: 1rem;
+    background-color: $green-tea;
+    color:$black;
+    padding: .55rem 1.5rem;
+    margin:0 0 0 1rem;
+    transition:.24s linear background-color;
+    &:focus-within,
+    &:hover {
+        background-color: $green-malachite;
+    }
+}
+
+.label {
+    @include font(clamp(1.7rem, 1.8vw, 2rem), 700, 1, null, null, center);
+}
+
+.icon {
+    @include flex(center,center);
+    @include size(3.3rem, 3.3rem);
+    font-size: 2.2rem;
+}

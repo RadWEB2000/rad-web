@@ -1,0 +1,40 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    @include flex(flex-start, center,column);
+    margin:12vh auto 1rem;
+    min-height:30vh;
+    padding: 1.5rem;
+    width:clamp(5rem, 135rem, 95%);
+}
+
+.image__wrapper {
+    @include size(40vh, 100%);
+    display: block;
+    position: relative;
+}
+
+.image {
+    @include size(100%,100%);
+    object-fit: cover;
+    object-position: center;
+}
+
+.title {
+    @include font(clamp(5rem, 11vw, 15rem), 400, 1.2, uppercase, null, start);
+    color:$green-lime;
+    font-family: $anton;
+
+    &::first-line {
+        color:$white;
+    }
+}
+
+@media only screen {
+    @media (min-width:1400px){
+        .wrapper {
+            min-height: 45vh;
+        }
+    }
+}

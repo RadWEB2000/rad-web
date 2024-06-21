@@ -1,0 +1,32 @@
+@import "../../../../../styles/Mixins.scss";
+@import "../../../../../styles/Variables.scss";
+
+.wrapper {
+    
+    margin-top: 4vh;
+    padding: 0 0 0 5vw;
+    width: 100%;
+}
+
+.box {
+    @include flex(flex-start, flex-start, row nowrap, 1rem, null, true);
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+        height: 0;
+        width: 0;
+    }
+}
+
+@media only screen {
+    @media (min-width:900px){
+        .wrapper {
+            padding: 0rem 6vw 0rem .2vw;
+            padding: 0rem .8vw;
+        }
+        .box {
+            justify-content: flex-end;
+            flex-flow:row wrap;
+            padding: 1rem 0rem;
+        }
+    }
+}

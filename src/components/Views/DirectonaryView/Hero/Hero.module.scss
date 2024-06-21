@@ -1,0 +1,53 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    margin:15vh 0 4vh;
+    padding: 2rem 4vw;
+}
+
+.title,
+.slogan {
+    @include font(unset, 400, 1, null, null, start);
+
+    font-family: $anton;
+}
+
+.title {
+    font-size: clamp(5rem, 9.25vw, 17rem);
+}
+
+.slogan {
+    color:$green-lime;
+    font-size: clamp(2.5rem, 4.25vw, 6.22rem);
+}
+
+.content {
+    @include font(clamp(1.55rem, 1.62vw, 1.7rem), 400, 1.7, null, null, start);
+    margin-top: 4rem;
+    max-width: 75ch;
+}
+
+.search {
+    @include flex(flex-start,flex-start,column, null, .3rem);
+    font-family: $mono;
+    margin-top: 4.1vh;
+}
+
+.search__field {
+    @include font(1.66rem, 500, 1, null, null, start);
+    border-radius: 1rem;
+    background-color: color-mix(in srgb, $onyx 40%, $black 60%);
+    color:$white;
+    margin-top: 0.25rem;
+    padding: 1.82rem 2rem;
+    transition:.22s linear background-color;
+    width:clamp(10rem, 90rem, 95%);
+    &::placeholder {
+        color:$silver;
+    }
+    &:focus-within,
+    &:hover {
+        background-color: color-mix(in srgb, $onyx 70%, $black 20%);
+    }
+}

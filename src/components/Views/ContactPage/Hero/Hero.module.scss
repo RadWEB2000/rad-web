@@ -1,0 +1,23 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    margin:12vh 0 3vh;
+    padding:1rem 4vw;
+}
+
+
+.title, 
+.slogan {
+    @include font(unset, 400, 1.2, null, null, start);
+    font-family: $anton;
+}
+
+.title {
+    font-size: clamp(5rem, 9.2vw, 13.5rem);
+}
+
+.slogan {
+    color:$green-lime;
+    font-size: clamp(3.5rem, 4.2vw, 6.5rem);
+}

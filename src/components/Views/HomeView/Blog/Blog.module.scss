@@ -1,0 +1,47 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    margin: 15vh 0 10vh;
+}
+
+.box {
+    @include flex(flex-start,flex-start,column, 0, 3rem);
+    margin:2vh auto;
+    width:90%;
+}
+
+.title {
+    @include font(clamp(4rem, 14vw, 17rem), 400, 1, uppercase, null, start);
+    font-family: $anton;
+}
+
+.content {
+    @include font(clamp(1.67rem, 2.2vw, 2rem), 400, 1.8, null, null, start);
+    color:$silver;
+    max-width: 60ch;
+}
+
+.cards {
+    align-items: start;
+    display: grid;
+    gap:1rem;
+    grid-template-columns: repeat(1,1fr);
+    justify-content: center;
+    justify-items: center;
+    padding: 2vh .4rem;
+}
+
+@media only screen {
+    @media (min-width:530px){
+        .cards {
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+    @media (min-width:1100px){
+        .cards {
+            grid-template-columns: repeat(4,1fr);
+            padding: 2vh 4vw;
+        }
+    }
+}

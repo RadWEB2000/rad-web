@@ -1,0 +1,15 @@
+@import "../Mixins.scss";
+
+.managment {
+    @include flex(center,center, row wrap-reverse, 1rem, 1.5rem, null);
+    margin:1rem auto;
+    width:clamp(5rem, 130rem, 95%);
+}
+
+@media only screen {
+    @media (min-width:860px){
+        .managment {
+            justify-content: space-between;
+        }
+    }
+}

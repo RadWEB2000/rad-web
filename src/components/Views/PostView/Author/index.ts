@@ -1,0 +1,1 @@
+export {default} from "v-post/Author/Author"

@@ -1,0 +1,37 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    margin:10vh 0 15vh;
+}
+
+.box {
+    @include flex(flex-start,flex-start,column, null, 1rem);
+    padding: 4rem 2vw;
+}
+
+.details {
+    @include flex(flex-start, flex-start, column, null, 1rem);
+}
+
+.title {
+    @include font(clamp(4.2rem,7vw, 12rem),400,1, uppercase, null, start);
+    font-family: $anton;
+}
+
+.content {
+    @include font(clamp(1.32rem, 2vw, 1.72rem), 400, 1.7, null, null, start);
+    color:color-mix(in srgb, $silver 90%, $jet 30%);
+}
+
+@media only screen {
+    @media (min-width:1350px){
+        .box {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap:5rem;
+            margin:1rem auto;
+            width: 89%;
+        }
+    }
+}

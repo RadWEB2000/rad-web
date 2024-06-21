@@ -1,0 +1,45 @@
+@import "../../../../styles/Mixins.scss";
+@import "../../../../styles/Variables.scss";
+
+.wrapper {
+    margin: 0 auto;
+    width:clamp(5rem, 145rem, 95%);
+}
+
+.box {
+    @include flex(flex-start,space-between, row wrap, .5rem, .5rem);
+}
+
+.title {
+    @include font(clamp(4.7rem, 6.5vw, 13rem), 400, 1, uppercase, null, start);
+    font-family: $anton;
+}
+
+.button {
+    display: flex;
+}
+
+
+.content {
+    @include font(clamp(1.55rem,2vw,2rem),400,2.1, null,null, start);
+    color: color-mix(in srgb, $silver 90%, $jet 30%);
+    margin: 0 auto 0 0;
+    padding: 1rem;
+    width: 100%;
+}
+
+
+.cards {
+    @include flex(flex-start,flex-start,column, 0, 2vh,false);
+    margin-top: 5vh;
+    position: relative;
+}
+
+@media only screen {
+    @media (min-width:1350px){
+        .cards {
+            margin-top: 15vh;
+            row-gap:7vh;
+        }
+    }
+}
