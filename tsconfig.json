@@ -44,6 +44,8 @@
       "img/*":["./src/assets/images/*"],
       "l-footer/*":["./src/components/Layout/Footer/*"],
       "l-nav/*":["./src/components/Layout/Navigation/*"],
+      "l-d-nav/*":["./src/components/Layout/Navigation/DesktopNavigation/*"],
+      "l-m-nav/*":["./src/components/Layout/Navigation/MobileNavigation/*"],
       "l-seo/*":["./src/components/Layout/Seo/*"],
       "layout/*":["./src/components/Layout/*"],
       "lib/*":["./src/lib/*"],

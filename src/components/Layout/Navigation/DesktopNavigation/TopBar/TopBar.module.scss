@@ -1,0 +1,56 @@
+@import "../../../../../styles/Mixins.scss";
+@import "../../../../../styles/Variables.scss";
+
+.wrapper {
+    // background-color: $jet;
+    border-bottom:1px solid rgba($jet, .9);
+    height: 6.77rem;
+    position: fixed;
+    
+    display: grid;
+    grid-template-columns: 12rem calc(100% - 12rem - 13rem) 13rem;
+    width: 100%;
+    z-index: 99;
+}
+
+.brand {
+    @include flex(center, flex-start);
+    @include font(3rem, 400, 1, null, null, start);
+    font-family: $anton;
+    height: 100%;
+    width: 100%;
+    padding: 0rem 1.2rem;
+}
+
+.menu {
+    @include flex(center, flex-end, row nowrap, 1rem , 1rem);
+    padding: 0rem 1rem 0rem 0.6rem;
+}
+
+.menu_item {
+    @include font(1.55rem, 400, 1, null, null,center);
+    font-family: $mono;
+    color:$silver;
+    transition:.12s linear color;
+    position: relative;
+    &::before {
+        @include size(1px, 0%);
+        background-color: $white;
+        bottom: -.2rem;
+        left: 0;
+        transition: .12s linear width
+    }
+    &:focus-within,
+    &:hover {
+        color:$white;
+        &::before {
+            width: 100%;
+        }
+    }
+}
+
+.settings {
+    @include flex(center, flex-end, row nowrap, .3rem, .3rem);
+    background-color: purple;
+    padding: 0rem 0.4rem 0rem 0.55rem;
+}

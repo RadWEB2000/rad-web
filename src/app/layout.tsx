@@ -3,6 +3,7 @@ import { Anton, Inter, JetBrains_Mono } from "next/font/google";
 import "css/Global.scss";
 import "css/Animations.scss";
 import { Footer } from "footer/index";
+import { DesktopNavigation } from "l-d-nav/index";
 
 const anton = Anton({
   weight:["400"],
@@ -40,6 +41,49 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={fonts}>
+        <DesktopNavigation
+          bar={{
+            brand:{
+              label:"RadWEB",
+              lang:"pl",
+              uri:"/"
+            },
+            menu: [
+               {
+                label:"Start",
+                uri:"#"
+               },
+               {
+                label:"O nas",
+                uri:"#"
+               },
+               {
+                label:"Blog",
+                uri:"#"
+               },
+               {
+                label:"Usługi",
+                uri:"#"
+               },
+               {
+                label:"Projekty",
+                uri:"#"
+               },
+               {
+                label:"Case study",
+                uri:"#"
+               },
+               {
+                label:"Słownik",
+                uri:"#"
+               },
+               {
+                label:"Kontakt",
+                uri:"#"
+               },
+            ]
+          }}
+        />
         {children}
         <Footer
           author={{
