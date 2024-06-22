@@ -1,9 +1,14 @@
 @import './Variables.scss';
 
-@mixin animationView($animation){
+@mixin animationView($animation, $type:"view"){
 	animation: $animation linear forwards;
-	animation-timeline: view();
-	animation-range: entry 0% cover 40%;
+	@if $type == "view" {
+		animation-timeline: view();
+		animation-range: entry 0% cover 40%;
+	} @else {
+		animation-timeline: scroll(y);
+		animation-range:entry 0 cover 6%;
+	}
 }
 
 @mixin backgroundCover() {

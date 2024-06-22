@@ -2,18 +2,20 @@
 
 import { ExpandMenuContext } from "context/ExpandMenuContext"
 import { useContext } from "react"
+import css from "l-nav/ExpandButton/ExpandButton.module.scss";
+
 
 export default function ExpandButton(){
-    // const {isOpen, toggle} = useContext(ExpandMenuContext)
+    const {isOpen, toggle} = useContext(ExpandMenuContext);
     return (
         <button
-            // data-open={isOpen}
-            // onClick={toggle}
+            className={css.wrapper}
+            data-open={isOpen}
+            onClick={toggle}
         >
-            |||
-            <span/>
-            <span/>
-            <span/>
+            <span className={css.line} />
+            <span className={css.line} />
+            <span className={css.line} />
         </button>
     )
 }

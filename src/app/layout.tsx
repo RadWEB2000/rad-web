@@ -4,6 +4,7 @@ import "css/Global.scss";
 import "css/Animations.scss";
 import { Footer } from "footer/index";
 import { DesktopNavigation } from "l-d-nav/index";
+import ExpandMenuProvider from "context/ExpandMenuContext";
 
 const anton = Anton({
   weight:["400"],
@@ -40,6 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <ExpandMenuProvider>
       <body className={fonts}>
         <DesktopNavigation
           bar={{
@@ -199,6 +201,7 @@ export default function RootLayout({
           }}
         />
       </body>
+      </ExpandMenuProvider>
     </html>
   );
 }

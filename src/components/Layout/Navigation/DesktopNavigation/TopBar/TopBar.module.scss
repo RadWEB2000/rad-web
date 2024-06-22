@@ -1,14 +1,32 @@
 @import "../../../../../styles/Mixins.scss";
 @import "../../../../../styles/Variables.scss";
 
+@keyframes changeBackground {
+    from {
+        background-color: color-mix(in srgb, rgba($black,.2) 70%, rgba($jet,.2) 20%);
+        border-bottom:1px solid rgba($jet, .9);
+        
+    }
+    to {
+        background-color: color-mix(in srgb, rgba($black,.99) 20%, rgba($jet,.99) 70%);
+        border-bottom:1px solid rgba($jet, 0);
+
+    }
+}
+
 .wrapper {
-    // background-color: $jet;
+    animation: changeBackground .12s ease-in-out forwards ;
+    animation-timeline:scroll(y);
+    animation-range:entry 0 cover 1%;
+    backdrop-filter: blur(1px);
     border-bottom:1px solid rgba($jet, .9);
     height: 6.77rem;
     position: fixed;
-    
+    top:0;
+    left:0;
     display: grid;
     grid-template-columns: 12rem calc(100% - 12rem - 13rem) 13rem;
+    transition:.12s linear all;
     width: 100%;
     z-index: 99;
 }
@@ -20,6 +38,10 @@
     height: 100%;
     width: 100%;
     padding: 0rem 1.2rem;
+    transition:.12s linear color;
+    &:hover {
+        color:$green-spring;
+    }
 }
 
 .menu {
@@ -34,23 +56,25 @@
     transition:.12s linear color;
     position: relative;
     &::before {
-        @include size(1px, 0%);
+        @include size(1px, 100%);
         background-color: $white;
         bottom: -.2rem;
         left: 0;
-        transition: .12s linear width
+        transform-origin: left;
+        transform: scaleX(0);
+        transition: .12s linear transform;
     }
     &:focus-within,
     &:hover {
         color:$white;
         &::before {
-            width: 100%;
+            transform: scaleX(1)
         }
     }
 }
 
 .settings {
     @include flex(center, flex-end, row nowrap, .3rem, .3rem);
-    background-color: purple;
+    // background-color: purple;
     padding: 0rem 0.4rem 0rem 0.55rem;
 }
