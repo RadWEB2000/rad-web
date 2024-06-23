@@ -15,28 +15,27 @@
 }
 
 .wrapper {
+    @include size(6.77rem, 100%);
     animation: changeBackground .12s ease-in-out forwards ;
     animation-timeline:scroll(y);
     animation-range:entry 0 cover 1%;
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px) grayscale(100%);
     border-bottom:1px solid rgba($jet, .9);
-    height: 6.77rem;
+    display: grid;
+    grid-template-columns: 12rem calc(100% - 12rem - 6rem) 6rem;
+    left:0;
+    padding:0rem 1.5vw;
     position: fixed;
     top:0;
-    left:0;
-    display: grid;
-    grid-template-columns: 12rem calc(100% - 12rem - 13rem) 13rem;
     transition:.12s linear all;
-    width: 100%;
     z-index: 99;
 }
 
 .brand {
     @include flex(center, flex-start);
     @include font(3rem, 400, 1, null, null, start);
+    @include size(100%,100%);
     font-family: $anton;
-    height: 100%;
-    width: 100%;
     padding: 0rem 1.2rem;
     transition:.12s linear color;
     &:hover {
@@ -51,17 +50,17 @@
 
 .menu_item {
     @include font(1.55rem, 400, 1, null, null,center);
-    font-family: $mono;
     color:$silver;
-    transition:.12s linear color;
+    font-family: $mono;
     position: relative;
+    transition:.12s linear color;
     &::before {
         @include size(1px, 100%);
         background-color: $white;
         bottom: -.2rem;
         left: 0;
-        transform-origin: left;
         transform: scaleX(0);
+        transform-origin: left;
         transition: .12s linear transform;
     }
     &:focus-within,
@@ -75,6 +74,5 @@
 
 .settings {
     @include flex(center, flex-end, row nowrap, .3rem, .3rem);
-    // background-color: purple;
     padding: 0rem 0.4rem 0rem 0.55rem;
 }
