@@ -1,3 +1,5 @@
+import { tSecondaryBlogCard } from "c-blog/SecondaryBlogCard/SecondaryBlogCard.models";
+
 export type tFullscreenMenu = {
     menu :{ 
         label:string;
@@ -10,5 +12,6 @@ export type tFullscreenMenu = {
     blog: {
         label:string;
         uri:string; 
-    }[]
+    }[];
+    cards:tSecondaryBlogCard[];
 }

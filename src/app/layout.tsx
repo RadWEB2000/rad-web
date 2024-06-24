@@ -5,6 +5,8 @@ import "css/Animations.scss";
 import { Footer } from "footer/index";
 import { DesktopNavigation } from "l-d-nav/index";
 import ExpandMenuProvider from "context/ExpandMenuContext";
+import blog_img from "img/card_1.jpg";
+
 
 const anton = Anton({
   weight:["400"],
@@ -83,6 +85,222 @@ export default function RootLayout({
                 label:"Kontakt",
                 uri:"#"
                },
+            ]
+          }}
+          fullscreen={{
+            blog: [
+              {
+                label:"Programowanie",
+                uri:"#"
+              },
+              {
+                label:"Pozycjonowanie",
+                uri:"#"
+              },
+              {
+                label:"Systemy operacyjne",
+                uri:"#"
+              },
+              {
+                label:"Videomaking",
+                uri:"#"
+              },
+              {
+                label:"Copywriting",
+                uri:"#"
+              },
+              {
+                label:"Social media",
+                uri:"#"
+              },
+            ],
+            cards:[
+              {
+                category:{
+                  label:"Programwoanie",
+                  uri:"#"
+                },
+                image:{
+                  alt:"",
+                  src:blog_img.src,
+                  title:""
+                },
+                release:"21 kwietnia 2021",
+                title:"Co nowego w Zorin OS 17?",
+                uri:"#"
+              },
+              {
+                category:{
+                  label:"Programwoanie",
+                  uri:"#"
+                },
+                image:{
+                  alt:"",
+                  src:blog_img.src,
+                  title:""
+                },
+                release:"21 kwietnia 2021",
+                title:"Co nowego w Zorin OS 17?",
+                uri:"#"
+              },
+              {
+                category:{
+                  label:"Programwoanie",
+                  uri:"#"
+                },
+                image:{
+                  alt:"",
+                  src:blog_img.src,
+                  title:""
+                },
+                release:"21 kwietnia 2021",
+                title:"Co nowego w Zorin OS 17?",
+                uri:"#"
+              },
+              {
+                category:{
+                  label:"Programwoanie",
+                  uri:"#"
+                },
+                image:{
+                  alt:"",
+                  src:blog_img.src,
+                  title:""
+                },
+                release:"21 kwietnia 2021",
+                title:"Co nowego w Zorin OS 17?",
+                uri:"#"
+              },
+              {
+                category:{
+                  label:"Programwoanie",
+                  uri:"#"
+                },
+                image:{
+                  alt:"",
+                  src:blog_img.src,
+                  title:""
+                },
+                release:"21 kwietnia 2021",
+                title:"Co nowego w Zorin OS 17?",
+                uri:"#"
+              },
+              {
+                category:{
+                  label:"Programwoanie",
+                  uri:"#"
+                },
+                image:{
+                  alt:"",
+                  src:blog_img.src,
+                  title:""
+                },
+                release:"21 kwietnia 2021",
+                title:"Co nowego w Zorin OS 17?",
+                uri:"#"
+              },
+              {
+                category:{
+                  label:"Programwoanie",
+                  uri:"#"
+                },
+                image:{
+                  alt:"",
+                  src:blog_img.src,
+                  title:""
+                },
+                release:"21 kwietnia 2021",
+                title:"Co nowego w Zorin OS 17?",
+                uri:"#"
+              },
+            ],
+            menu:[
+              {
+                label:"Start",
+                uri:"#"
+              },
+              {
+                label:"O nas",
+                uri:"#",
+                submenu:[
+                  {
+                    label:"Radosław Adamczyk",
+                    uri:"#"
+                  },
+                  {
+                    label:"Filip Bukowiecki",
+                    uri:"#"
+                  }
+                ]
+              },
+              {
+                label:"Blog",
+                uri:"#",
+                submenu: [
+                  {
+                    label:"Programowanie",
+                    uri:"#"
+                  },
+                  {
+                    label:"Pozycjonowanie",
+                    uri:"#"
+                  },
+                  {
+                    label:"Systemy operacyjne",
+                    uri:"#"
+                  },
+                  {
+                    label:"Videomaking",
+                    uri:"#"
+                  },
+                  {
+                    label:"Copywriting",
+                    uri:"#"
+                  },
+                  {
+                    label:"Social media",
+                    uri:"#"
+                  },
+                ]
+              },
+              {
+                label:"Usługi",
+                uri:"#",
+                submenu:[
+                  {
+                    label:"Strony internetowe",
+                    uri:"#"
+                  },
+                  {
+                    label:"SEO",
+                    uri:"#"
+                  },
+                  {
+                    label:"Copywriting",
+                    uri:"#"
+                  },
+                  {
+                    label:"Videomaking",
+                    uri:"#"
+                  }
+                ]
+              },
+              {
+                label:"Projekty",
+                uri:"#"
+              },
+              {
+                label:"Case study",
+                uri:"#"
+              },
+              {
+                label:"Słownik",
+                uri:"#"
+              },
+              {
+                label:"Kontakt",
+                uri:"#"
+              },
             ]
           }}
         />

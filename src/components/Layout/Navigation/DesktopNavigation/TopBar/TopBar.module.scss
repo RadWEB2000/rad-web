@@ -8,7 +8,7 @@
         
     }
     to {
-        background-color: color-mix(in srgb, rgba($black,.99) 20%, rgba($jet,.99) 70%);
+        background-color: color-mix(in srgb, rgba($black,.99) 60%, rgba($jet,.99) 70%);
         border-bottom:1px solid rgba($jet, 0);
 
     }
@@ -22,13 +22,17 @@
     backdrop-filter: blur(1px) grayscale(100%);
     border-bottom:1px solid rgba($jet, .9);
     display: grid;
-    grid-template-columns: 12rem calc(100% - 12rem - 6rem) 6rem;
+    grid-template-columns:2fr 1fr;
     left:0;
     padding:0rem 1.5vw;
     position: fixed;
     top:0;
     transition:.12s linear all;
     z-index: 99;
+    &[data-open=true]{
+        background-color: $black !important;
+        border-bottom:1px solid rgba($jet, 0) !important;
+    }
 }
 
 .brand {
@@ -44,12 +48,11 @@
 }
 
 .menu {
-    @include flex(center, flex-end, row nowrap, 1rem , 1rem);
-    padding: 0rem 1rem 0rem 0.6rem;
+    display: none;
 }
 
 .menu_item {
-    @include font(1.55rem, 400, 1, null, null,center);
+    @include font(1.55rem, 600, 1, null, null,center);
     color:$silver;
     font-family: $mono;
     position: relative;
@@ -75,4 +78,17 @@
 .settings {
     @include flex(center, flex-end, row nowrap, .3rem, .3rem);
     padding: 0rem 0.4rem 0rem 0.55rem;
+}
+@media only screen {
+    @media (min-width:950px){
+        .wrapper {
+            grid-template-columns: 12rem calc(100% - 12rem - 6rem) 6rem;
+        }
+
+        .menu {
+            @include flex(center, flex-end, row nowrap, 1.3rem , 1rem);
+            padding: 0rem 1rem 0rem 0.6rem;
+        }
+        
+    }
 }

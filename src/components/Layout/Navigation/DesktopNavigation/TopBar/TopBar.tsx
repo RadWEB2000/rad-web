@@ -1,11 +1,17 @@
+"use client"
 import Link from "next/link";
 import {tTopBar} from "l-d-nav/TopBar/TopBar.models"
 import ExpandButton from "l-nav/ExpandButton";
 import css from "l-d-nav/TopBar/TopBar.module.scss"
+import { ExpandMenuContext } from "context/ExpandMenuContext";
+import { useContext } from "react";
 export default function TopBar({brand,menu}:tTopBar){
+    const {isOpen} = useContext(ExpandMenuContext);
+
     return (
         <nav
             className={css.wrapper}
+            data-open={isOpen}
         >
             <Link 
                 className={css.brand}
@@ -18,6 +24,7 @@ export default function TopBar({brand,menu}:tTopBar){
             <menu
                 className={css.menu}
             >
+                
                 {menu.map(({label,uri}) => {
                     return (
                         <Link
