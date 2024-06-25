@@ -65,6 +65,7 @@
       "v-project/*":["./src/components/Views/ProjectView/*"],
       "v-projects/*":["./src/components/Views/ProjectsView/*"],
       "views/*":["./src/components/Views/*"],
+      "l-seo/*":["./src/components/Layout/Seo/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

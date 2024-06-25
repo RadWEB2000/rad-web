@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "css/Global.scss";
 import ExpandMenuProvider from "context/ExpandMenuContext";
-import { Footer,Navigation } from "layout/index";
+import { Fonts, Footer,Navigation } from "layout/index";
 
 
 
@@ -17,6 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <Fonts/>
+      </head>
       <ExpandMenuProvider>
       <body>
         <Navigation
