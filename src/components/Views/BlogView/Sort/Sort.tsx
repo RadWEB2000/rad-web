@@ -1,5 +1,5 @@
 "use client";
-import {tMethodSortArray, tMethodSort} from "v-blog/Sort/Sort.models";
+import {tMethodSortArray} from "v-blog/Sort/Sort.models";
 import { useState } from "react";
 import css from "v-blog/Sort/Sort.module.scss";
 import {AnimatePresence, motion} from "framer-motion";
