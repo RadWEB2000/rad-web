@@ -1,35 +1,9 @@
 import type { Metadata } from "next";
-import { Anton, Inter, JetBrains_Mono } from "next/font/google";
 import "css/Global.scss";
-import "css/Animations.scss";
-import { Footer } from "footer/index";
-import { DesktopNavigation } from "l-d-nav/index";
 import ExpandMenuProvider from "context/ExpandMenuContext";
-import blog_img from "img/card_1.jpg";
+import { Footer,Navigation } from "layout/index";
 
 
-const anton = Anton({
-  weight:["400"],
-  display:"swap",
-  preload:true,
-  subsets:["latin-ext"],
-  variable:"--font-anton"
-})
-const inter = Inter({
-  weight:["100","200","300","400","500","600","700","800","900"],
-  preload:true,
-  subsets:["latin-ext"],
-  variable:"--font-inter"
-})
-
-const mono = JetBrains_Mono({
-  display:"swap",
-  preload:false,
-  weight:["300","400","600"],
-  variable:"--font-mono"
-})
-
-const fonts = `${anton.variable} ${inter.variable} ${mono.variable}`;
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -44,9 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ExpandMenuProvider>
-      <body className={fonts}>
-        <DesktopNavigation
-          bar={{
+      <body>
+        <Navigation
+           bar={{
             brand:{
               label:"RadWEB",
               lang:"pl",
@@ -87,7 +61,7 @@ export default function RootLayout({
                },
             ]
           }}
-          fullscreen={{
+          menu={{
             blog: [
               {
                 label:"Programowanie",
@@ -111,106 +85,6 @@ export default function RootLayout({
               },
               {
                 label:"Social media",
-                uri:"#"
-              },
-            ],
-            cards:[
-              {
-                category:{
-                  label:"Programwoanie",
-                  uri:"#"
-                },
-                image:{
-                  alt:"",
-                  src:blog_img.src,
-                  title:""
-                },
-                release:"21 kwietnia 2021",
-                title:"Co nowego w Zorin OS 17?",
-                uri:"#"
-              },
-              {
-                category:{
-                  label:"Programwoanie",
-                  uri:"#"
-                },
-                image:{
-                  alt:"",
-                  src:blog_img.src,
-                  title:""
-                },
-                release:"21 kwietnia 2021",
-                title:"Co nowego w Zorin OS 17?",
-                uri:"#"
-              },
-              {
-                category:{
-                  label:"Programwoanie",
-                  uri:"#"
-                },
-                image:{
-                  alt:"",
-                  src:blog_img.src,
-                  title:""
-                },
-                release:"21 kwietnia 2021",
-                title:"Co nowego w Zorin OS 17?",
-                uri:"#"
-              },
-              {
-                category:{
-                  label:"Programwoanie",
-                  uri:"#"
-                },
-                image:{
-                  alt:"",
-                  src:blog_img.src,
-                  title:""
-                },
-                release:"21 kwietnia 2021",
-                title:"Co nowego w Zorin OS 17?",
-                uri:"#"
-              },
-              {
-                category:{
-                  label:"Programwoanie",
-                  uri:"#"
-                },
-                image:{
-                  alt:"",
-                  src:blog_img.src,
-                  title:""
-                },
-                release:"21 kwietnia 2021",
-                title:"Co nowego w Zorin OS 17?",
-                uri:"#"
-              },
-              {
-                category:{
-                  label:"Programwoanie",
-                  uri:"#"
-                },
-                image:{
-                  alt:"",
-                  src:blog_img.src,
-                  title:""
-                },
-                release:"21 kwietnia 2021",
-                title:"Co nowego w Zorin OS 17?",
-                uri:"#"
-              },
-              {
-                category:{
-                  label:"Programwoanie",
-                  uri:"#"
-                },
-                image:{
-                  alt:"",
-                  src:blog_img.src,
-                  title:""
-                },
-                release:"21 kwietnia 2021",
-                title:"Co nowego w Zorin OS 17?",
                 uri:"#"
               },
             ],
