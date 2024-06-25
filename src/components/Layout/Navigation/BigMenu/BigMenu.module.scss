@@ -46,9 +46,9 @@
     &[data-open=true]{
         animation: open .32s ease-in-out forwards;
     }
-    &[data-open=false]{
-        animation: close .32s ease-in-out forwards;
-    }
+    // &[data-open=false]{
+    //     animation: close .32s ease-in-out forwards;
+    // }
 }
 
 .categories,
