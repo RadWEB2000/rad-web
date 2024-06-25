@@ -41,6 +41,7 @@
     position: fixed;
     top:6.77rem;
     transform: translateY(100%);
+    transition: .32s ease-in-out opacity, .32s ease-in-out transform, .32s ease-in-out visiblity;
     visibility: hidden;
     z-index: 99;
     &[data-open=true]{
